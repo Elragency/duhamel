@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu May 01 2025 08:15:45 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html>
 <html data-wf-page="680bf069016b136c7937df44" data-wf-site="680bf069016b136c7937dedb">
 <head>
   <meta charset="utf-8">
@@ -173,27 +173,59 @@
       <div class="w-layout-vflex contact-two-hero-main">
         <h1 data-w-id="5d0bcf26-c85a-1b18-07c1-9f8fc5862aa2" style="opacity:0" class="big-text font-change t1 white-text contact">Contactez Groupe Duhamel pour votre projet de mini-excavation</h1>
         <div data-w-id="65dbb30f-2111-a8bf-0223-f4b3d79316e4" style="opacity:0" class="form-block form-two-block w-form">
-          <form id="form-one" name="email-form" netlify data-name="Email Form" method="get" class="form contact-one-form-wrap" data-wf-page-id="680bf069016b136c7937df44" data-wf-element-id="65dbb30f-2111-a8bf-0223-f4b3d79316e5">
-            <div class="w-layout-hflex form-box-one"><input class="text-field-one w-input" maxlength="256" name="Full-name" data-name="Full name" placeholder="Votre Nom Complet" type="text" id="Full-name" required=""><input class="text-field-one w-input" maxlength="256" name="Courriel" data-name="Courriel" placeholder="Votre Courriel" type="email" id="Courriel" required=""></div>
-            <div class="w-layout-hflex form-box-one"><input class="text-field-one w-input" maxlength="256" name="T-l-phone" data-name="Téléphone" placeholder="Votre Téléphone" type="tel" id="T-l-phone" required=""><input class="text-field-one w-input" maxlength="256" name="sujet" data-name="sujet" placeholder="Sujet" type="text" id="sujet" required=""></div><textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Que pouvons nous faire pour vous ?" required="" class="text-field-one text-field-two w-input"></textarea>
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form contact-one-form-wrap">
+            <!-- Hidden fields required by Netlify -->
+            <input type="hidden" name="form-name" value="contact">
+            <p hidden>
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+          
+            <!-- Visible fields -->
+            <div class="w-layout-hflex form-box-one">
+              <input class="text-field-one w-input" maxlength="256" name="Full-name" placeholder="Votre Nom Complet" type="text" id="Full-name" required>
+              <input class="text-field-one w-input" maxlength="256" name="Courriel" placeholder="Votre Courriel" type="email" id="Courriel" required>
+            </div>
+          
+            <div class="w-layout-hflex form-box-one">
+              <input class="text-field-one w-input" maxlength="256" name="T-l-phone" placeholder="Votre Téléphone" type="tel" id="T-l-phone" required>
+              <input class="text-field-one w-input" maxlength="256" name="sujet" placeholder="Sujet" type="text" id="sujet" required>
+            </div>
+          
+            <textarea id="Message" name="Message" maxlength="5000" placeholder="Que pouvons nous faire pour vous ?" required class="text-field-one text-field-two w-input"></textarea>
+          
             <div class="w-layout-hflex form-box-three">
-              <div data-w-id="11303ed3-d0da-0875-b032-bebe5b62ff51" class="button-style-one overflow-hidden position-relative dark-background-button">
+              <div class="button-style-one overflow-hidden position-relative dark-background-button">
                 <div class="button-text-wrap overflow-hidden dark-background-button-2">
                   <div class="button-font dark-background-button-3">Envoyer Maintenant</div>
                   <div class="button-font white-text dark-background-button-4">Envoyer Maintenant</div>
-                </div><input type="submit" data-wait="Veuillez Patienter..." class="submit-button w-button" value="Envoyer Maintenant">
+                </div>
+                <input type="submit" class="submit-button w-button" value="Envoyer Maintenant">
                 <div class="button-overlay dark-background-button-5"></div>
               </div>
-              <div class="w-layout-hflex checkbox-wrap"><label class="w-checkbox checkbox-field">
-                  <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div><input type="checkbox" name="Checkbox-2" id="Checkbox-2" data-name="Checkbox 2" style="opacity:0;position:absolute;z-index:-1"><span class="white-text no-margin chackbox-content contact-page w-form-label" for="Checkbox-2">J&#x27;accepte les termes et conditions</span>
-                </label></div>
+          
+              <div class="w-layout-hflex checkbox-wrap">
+                <label class="w-checkbox checkbox-field">
+                  <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
+                  <input type="checkbox" name="Checkbox-2" id="Checkbox-2" style="opacity:0;position:absolute;z-index:-1">
+                  <span class="white-text no-margin chackbox-content contact-page w-form-label" for="Checkbox-2">J'accepte les termes et conditions</span>
+                </label>
+              </div>
+            </div>
+          
+            <!-- Success and Error messages -->
+            <div class="success-message-v1 w-form-done">
+              <div>Merci! Votre soumission a été reçue!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oups! Une erreur est survenue lors de l'envoi du formulaire.</div>
             </div>
           </form>
+          
           <div class="success-message-v1 w-form-done">
             <div>Thank you! Your submission has been received!</div>
           </div>
           <div class="w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
+            <div>Oups ! Une erreur s'est produite lors de l'envoi du formulaire.</div>
           </div>
         </div>
       </div>

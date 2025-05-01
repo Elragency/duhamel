@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="680bf069016b136c7937df44" data-wf-site="680bf069016b136c7937dedb">
+<html data-wf-page="680bf069016b136c7937df44" data-wf-site="680bf069016b136c7937dedb" lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Contactez Groupe Duhamel | Mini-Excavation Montréal</title>
@@ -171,28 +171,33 @@
   <section class="contact-two-hero">
     <div class="w-layout-blockcontainer container-four w-container">
       <div class="w-layout-vflex contact-two-hero-main">
-        <h1 data-w-id="5d0bcf26-c85a-1b18-07c1-9f8fc5862aa2" style="opacity:0" class="big-text font-change t1 white-text contact">Contactez Groupe Duhamel pour votre projet de mini-excavation</h1>
-        <div data-w-id="65dbb30f-2111-a8bf-0223-f4b3d79316e4" style="opacity:0" class="form-block form-two-block w-form">
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form contact-one-form-wrap">
-            <!-- Hidden fields required by Netlify -->
+        <h1 class="big-text font-change t1 white-text contact">Contactez Groupe Duhamel pour votre projet de mini-excavation</h1>
+        <div class="form-block form-two-block w-form">
+          <!-- Main contact form (Netlify-enabled) -->
+          <form
+            name="contact"
+            method="POST"
+            action="/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="form contact-one-form-wrap"
+          >
+            <!-- Netlify hidden inputs -->
             <input type="hidden" name="form-name" value="contact">
             <p hidden>
-              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+              <label>Don’t fill this out if you're human: <input name="bot-field"></label>
             </p>
-          
-            <!-- Visible fields -->
+
+            <!-- your original inputs -->
             <div class="w-layout-hflex form-box-one">
               <input class="text-field-one w-input" maxlength="256" name="Full-name" placeholder="Votre Nom Complet" type="text" id="Full-name" required>
               <input class="text-field-one w-input" maxlength="256" name="Courriel" placeholder="Votre Courriel" type="email" id="Courriel" required>
             </div>
-          
             <div class="w-layout-hflex form-box-one">
               <input class="text-field-one w-input" maxlength="256" name="T-l-phone" placeholder="Votre Téléphone" type="tel" id="T-l-phone" required>
               <input class="text-field-one w-input" maxlength="256" name="sujet" placeholder="Sujet" type="text" id="sujet" required>
             </div>
-          
             <textarea id="Message" name="Message" maxlength="5000" placeholder="Que pouvons nous faire pour vous ?" required class="text-field-one text-field-two w-input"></textarea>
-          
             <div class="w-layout-hflex form-box-three">
               <div class="button-style-one overflow-hidden position-relative dark-background-button">
                 <div class="button-text-wrap overflow-hidden dark-background-button-2">
@@ -202,7 +207,6 @@
                 <input type="submit" class="submit-button w-button" value="Envoyer Maintenant">
                 <div class="button-overlay dark-background-button-5"></div>
               </div>
-          
               <div class="w-layout-hflex checkbox-wrap">
                 <label class="w-checkbox checkbox-field">
                   <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
@@ -211,21 +215,12 @@
                 </label>
               </div>
             </div>
-          
-            <!-- Success and Error messages -->
-            <div class="success-message-v1 w-form-done">
-              <div>Merci! Votre soumission a été reçue!</div>
-            </div>
-            <div class="w-form-fail">
-              <div>Oups! Une erreur est survenue lors de l'envoi du formulaire.</div>
-            </div>
           </form>
-          
           <div class="success-message-v1 w-form-done">
-            <div>Thank you! Your submission has been received!</div>
+            <div>Merci! Votre message a bien été envoyé.</div>
           </div>
           <div class="w-form-fail">
-            <div>Oups ! Une erreur s'est produite lors de l'envoi du formulaire.</div>
+            <div>Oups! Une erreur est survenue. Veuillez réessayer.</div>
           </div>
         </div>
       </div>

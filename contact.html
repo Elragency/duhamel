@@ -174,15 +174,9 @@
         <h1 class="big-text font-change t1 white-text contact">Contactez Groupe Duhamel pour votre projet de mini-excavation</h1>
         <div class="form-block form-two-block w-form">
           <!-- Main contact form (Netlify-enabled) -->
-          <form
-  id="contact-form"
-  name="contact"
-  method="POST"
-  action="/"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  class="form contact-one-form-wrap"
->
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
             <!-- Netlify hidden inputs -->
             <input type="hidden" name="form-name" value="contact">
             <p hidden>
@@ -217,7 +211,7 @@
               </div>
             </div>
           </form>
-          <div id="success-message" class="success-message-v1 w-form-done" style="display:none;">
+          <div id="success-message" class="w-form-done" style="display:none;">
             <div>Merci! Votre message a bien été envoyé.</div>
           </div>
           <div class="w-form-fail" style="display:none;">
@@ -457,11 +451,12 @@
         e.preventDefault();
   
         const formData = new FormData(form);
+        formData.append("form-name", form.getAttribute("name")); // important for Netlify!
   
         try {
           const response = await fetch("/", {
             method: "POST",
-            headers: { "Accept": "application/x-www-form-urlencoded" },
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
           });
   
@@ -479,6 +474,7 @@
       });
     });
   </script>
+  
   
   
 </body>

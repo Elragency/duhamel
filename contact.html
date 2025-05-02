@@ -147,43 +147,26 @@
         <h1 class="big-text font-change t1 white-text contact">Contactez Groupe Duhamel pour votre projet de mini-excavation</h1>
         <div class="form-block form-two-block w-form">
           <!-- Main contact form (Netlify-enabled) -->
-          <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
-            <!-- Netlify hidden inputs -->
-            <input type="hidden" name="form-name" value="contact">
-            <p hidden>
-              <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-            </p>
+          <iframe
+  src="https://api.leadconnectorhq.com/widget/form/CxVZxpzYcpqX53iDgfJM"
+  style="width:100%;height:100%;border:none;border-radius:3px"
+  id="inline-CxVZxpzYcpqX53iDgfJM" 
+  data-layout="{'id':'INLINE'}"
+  data-trigger-type="alwaysShow"
+  data-trigger-value=""
+  data-activation-type="alwaysActivated"
+  data-activation-value=""
+  data-deactivation-type="neverDeactivate"
+  data-deactivation-value=""
+  data-form-name="Groupe Duhamel - Contact"
+  data-height="790"
+  data-layout-iframe-id="inline-CxVZxpzYcpqX53iDgfJM"
+  data-form-id="CxVZxpzYcpqX53iDgfJM"
+  title="Groupe Duhamel - Contact"
+      >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
-            <!-- your original inputs -->
-            <div class="w-layout-hflex form-box-one">
-              <input class="text-field-one w-input" maxlength="256" name="Full-name" placeholder="Votre Nom Complet" type="text" id="Full-name" required>
-              <input class="text-field-one w-input" maxlength="256" name="Courriel" placeholder="Votre Courriel" type="email" id="Courriel" required>
-            </div>
-            <div class="w-layout-hflex form-box-one">
-              <input class="text-field-one w-input" maxlength="256" name="T-l-phone" placeholder="Votre Téléphone" type="tel" id="T-l-phone" required>
-              <input class="text-field-one w-input" maxlength="256" name="sujet" placeholder="Sujet" type="text" id="sujet" required>
-            </div>
-            <textarea id="Message" name="Message" maxlength="5000" placeholder="Que pouvons nous faire pour vous ?" required class="text-field-one text-field-two w-input"></textarea>
-            <div class="w-layout-hflex form-box-three">
-              <div class="button-style-one overflow-hidden position-relative dark-background-button">
-                <div class="button-text-wrap overflow-hidden dark-background-button-2">
-                  <div class="button-font dark-background-button-3">Envoyer Maintenant</div>
-                  <div class="button-font white-text dark-background-button-4">Envoyer Maintenant</div>
-                </div>
-                <input type="submit" class="submit-button w-button" value="Envoyer Maintenant">
-                <div class="button-overlay dark-background-button-5"></div>
-              </div>
-              <div class="w-layout-hflex checkbox-wrap">
-                <label class="w-checkbox checkbox-field">
-                  <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
-                  <input type="checkbox" name="Checkbox-2" id="Checkbox-2" style="opacity:0;position:absolute;z-index:-1">
-                  <span class="white-text no-margin chackbox-content contact-page w-form-label" for="Checkbox-2">J'accepte les termes et conditions</span>
-                </label>
-              </div>
-            </div>
-          </form>
           <div id="success-message" class="w-form-done" style="display:none;">
             <div>Merci! Votre message a bien été envoyé.</div>
           </div>
@@ -412,53 +395,6 @@
   </section>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=680bf069016b136c7937dedb" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("contact-form");
-      const successMessage = document.getElementById("success-message");
-      const errorMessage = document.getElementById("error-message");
-  
-      if (!form) return;
-  
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-  
-        const formData = new FormData(form);
-        formData.append("form-name", form.getAttribute("name"));
-  
-        // Get reCAPTCHA token
-        const recaptchaToken = grecaptcha.getResponse();
-        if (!recaptchaToken) {
-          alert("Veuillez valider le reCAPTCHA avant d’envoyer.");
-          return;
-        }
-  
-        formData.append("g-recaptcha-response", recaptchaToken); // Netlify needs this
-  
-        try {
-          const response = await fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-          });
-  
-          if (response.ok) {
-            form.style.display = "none";
-            if (successMessage) successMessage.style.display = "block";
-          } else {
-            form.style.display = "none";
-            if (errorMessage) errorMessage.style.display = "block";
-          }
-        } catch (error) {
-          form.style.display = "none";
-          if (errorMessage) errorMessage.style.display = "block";
-        }
-      });
-    });
-  </script>
-  
-  
-  
   
 </body>
 </html>

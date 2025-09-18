@@ -1,0 +1,13 @@
+# robots.txt for https://www.groupeduhamel.ca/
+
+User-agent: *
+Allow: /
+
+# Common folders to block if they exist
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Your sitemap
+Sitemap: https://www.groupeduhamel.ca/sitemap.xml
